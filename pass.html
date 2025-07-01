@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday to dear 'М.Цэлмэг'</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 4rem;
+      color: #e91e63;
+      text-shadow: 2px 2px #fff;
+      margin-bottom: 0.5rem;
+    }
+    .card-content {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      max-width: 650px;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: fadeInCard 1s ease-out 0.5s forwards;
+    }
+    @keyframes fadeInCard {
+      to { opacity: 1; transform: scale(1); }
+    }
+    p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin: 1rem 2rem;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInText 1s ease-out forwards;
+    }
+    .card-content p:nth-of-type(1) { animation-delay: 1s; }
+    .card-content p:nth-of-type(2) { animation-delay: 1.3s; }
+    .card-content p:nth-of-type(3) { animation-delay: 1.6s; }
+    .card-content p:nth-of-type(4) { animation-delay: 1.9s; }
+    .card-content p:nth-of-type(5) { animation-delay: 2.2s; }
+    @keyframes fadeInText { to { opacity: 1; transform: translateY(0); } }
+
+    button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      background: #e91e63;
+      color: #fff;
+      cursor: pointer;
+      font-family: 'Dancing Script', cursive;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(233, 30, 99, 0.4);
+      animation: pulse 2s ease-in-out 3s infinite;
+      position: relative;
+      z-index: 2;
+    }
+    button:hover { transform: scale(1.1); box-shadow: 0 6px 16px rgba(233, 30, 99, 0.6); }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+    .floating-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .floating-shape {
+      position: absolute;
+      font-size: 2rem;
+      animation: floatShape 6s linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes floatShape {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .modal {
+      background: #fff0f5;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.7);
+      animation: romanticEntrance 0.7s ease-out forwards;
+      position: relative;
+    }
+    @keyframes romanticEntrance {
+      0% { opacity: 0; transform: scale(0.7) rotate(-10deg); }
+      60% { transform: scale(1.1) rotate(5deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    .modal h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.8rem;
+      color: #d81b60;
+      margin-bottom: 1rem;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #e91e63, 0 0 10px #f06292; }
+      to { text-shadow: 0 0 20px #ec407a, 0 0 30px #f48fb1; }
+    }
+    .modal button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background: #e91e63;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+    }
+    .modal button:hover { background: #d81b60; }
+  </style>
+</head>
+<body>
+  <script>
+    const access = prompt("🔒 This page is private. Please enter the password:");
+    if (access !== "9980") {
+      document.body.innerHTML = "<h2 style='color:red; text-align:center; margin-top:20vh;'>Access Denied 🚫</h2>";
+    }
+  </script>
+  <div class="floating-shapes" id="floatingShapes"></div>
+  <div class="card-content">
+    <h1>Мэндчилгээ</h1>
+    <p>Өнөөдөр хорвоотой танилцсан өдөр</p>
+    <p>Халуун дуулаан дурсамжаар үдсэн өнгөрсөн жилүүдийн тэмдэглэлт өдөр</p>
+    <p>Хайртай гэр бүлийнхээ гэрэл гэгээ болон ирсэн жаргалтай өдөр</p>
+    <p>Хамгаас нандин чиний минь өдөр</p>
+    <button id="surpriseBtn">ЭНД ДАРААРАЙ</button>
+  </div>
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <h2>❤️ ТӨРСӨН ӨДРИЙН МЭНД ❤️</h2>
+      <p><strong>Гүзээлзгэнэ минь</strong></p>
+      <p><strong>Хайртай жүү</strong></p>
+
+
+       <p>Хэнд: М.Цэлмэг</p>
+       <p>Хэнээс: Содбилиг</p>
+      <button id="closeModal">Close</button>
+    </div>
+  </div>
+  <div id="youtubePlayer" style="width:0; height:0;"></div>
+  <script>
+    const surpriseBtn = document.getElementById('surpriseBtn');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeModal = document.getElementById('closeModal');
+    const floatingShapes = document.getElementById('floatingShapes');
+    const shapes = ['❤️', '🎂', '✨', '🍰'];
+    let player;
+
+    function createFloatingShape() {
+      const span = document.createElement('span');
+      span.classList.add('floating-shape');
+      span.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+      span.style.left = Math.random() * 100 + '%';
+      span.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      span.style.fontSize = (Math.random() * 12 + 20) + 'px';
+      floatingShapes.appendChild(span);
+      setTimeout(() => span.remove(), 6000);
+    }
+
+    setInterval(createFloatingShape, 300);
+
+    // YouTube Player API
+    let tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('youtubePlayer', {
+        height: '0',
+        width: '0',
+        videoId: 'GtmW0BfKpA8',
+        playerVars: {
+          autoplay: 0,
+          controls: 0,
+          start: 60,
+          end: 120,
+          modestbranding: 1,
+          iv_load_policy: 3,
+          rel: 0
+        },
+        events: {
+          onReady: (e) => {
+            // player is ready
+          }
+        }
+      });
+    }
+
+    surpriseBtn.addEventListener('click', () => {
+      modalOverlay.style.display = 'flex';
+      if (player && player.playVideo) {
+        player.setVolume(100);
+        player.playVideo();
+      }
+    });
+
+    closeModal.addEventListener('click', () => {
+      modalOverlay.style.display = 'none';
+      if (player) player.pauseVideo();
+    });
+  </script>
+</body>
+</html>
